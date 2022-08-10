@@ -3,4 +3,5 @@
 # 一致： return 0, 不一致: return 1
 # $1 : url
 # $2 : correct status code(number)
-return test `curl -o /dev/null -w %{http_code} -s $1` -eq $2
+test `curl -o /dev/null -w %{http_code} -s $1` -eq $2
+return $? 
